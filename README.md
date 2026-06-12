@@ -13,62 +13,69 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.9;
+            line-height: 1.8;
             color: #1f2937;
             background-color: #f8fafc;
         }
 
         .container {
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 20px;
         }
 
         header {
             background: #0f172a;
             color: white;
-            padding: 30px 0;
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 18px;
+            flex: 1;
+            min-width: 280px;
         }
 
         .logo img {
-            height: 85px;
+            height: 70px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(201, 162, 39, 0.2);
         }
 
         .logo h1 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             letter-spacing: 0.3px;
+            line-height: 1.3;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 40px;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         nav a {
             color: #e2e8f0;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.08rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
             padding: 8px 0;
         }
@@ -81,12 +88,13 @@
             background: #c9a227;
             color: #0f172a;
             border: 2px solid #c9a227;
-            padding: 12px 30px;
+            padding: 10px 25px;
             border-radius: 6px;
             cursor: pointer;
             font-weight: 700;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .lang-switch:hover {
@@ -98,113 +106,116 @@
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
             color: white;
             text-align: center;
-            padding: 160px 30px;
+            padding: 100px 20px;
         }
 
         .hero-content {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .hero-logo {
-            margin-bottom: 45px;
+            margin-bottom: 35px;
         }
 
         .hero-logo img {
-            height: 130px;
+            height: 110px;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .hero h2 {
-            font-size: 3.3rem;
-            margin-bottom: 28px;
+            font-size: 2.5rem;
+            margin-bottom: 22px;
             font-weight: 800;
             letter-spacing: 0.5px;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.4rem;
-            max-width: 850px;
+            font-size: 1.2rem;
+            max-width: 750px;
             margin: 0 auto;
-            line-height: 2;
+            line-height: 1.9;
             color: #e2e8f0;
         }
 
         section {
-            padding: 90px 0;
+            padding: 70px 0;
         }
 
         section h2 {
             text-align: center;
-            margin-bottom: 70px;
-            font-size: 2.5rem;
+            margin-bottom: 55px;
+            font-size: 2.2rem;
             color: #0f172a;
             font-weight: 800;
             position: relative;
+            line-height: 1.3;
         }
 
         section h2::after {
             content: '';
             display: block;
-            width: 90px;
+            width: 80px;
             height: 4px;
             background: linear-gradient(90deg, #c9a227, #d4af37);
-            margin: 22px auto 0;
+            margin: 20px auto 0;
             border-radius: 2px;
         }
 
         .about-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background: #ffffff;
-            padding: 50px 40px;
+            padding: 40px 30px;
             border: 1px solid #e2e8f0;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
             transition: all 0.4s ease;
         }
 
         .card:hover {
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
             border-color: #c9a227;
-            transform: translateY(-8px);
+            transform: translateY(-6px);
         }
 
         .card h3 {
             color: #0f172a;
-            margin-bottom: 24px;
-            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-size: 1.45rem;
             font-weight: 700;
+            line-height: 1.3;
         }
 
         .card p, .card li {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #4b5563;
         }
 
         .card ul {
             list-style-position: inside;
-            padding-right: 15px;
+            padding-right: 10px;
         }
 
         .card li {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
         }
 
         .service-item {
             text-align: center;
-            padding: 55px 40px;
+            padding: 45px 28px;
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 10px;
@@ -214,67 +225,75 @@
         .service-item:hover {
             background: #fefefe;
             border-color: #0f172a;
-            transform: translateY(-5px);
+            transform: translateY(-4px);
         }
 
         .service-item h3 {
             color: #0f172a;
-            margin-bottom: 15px;
-            font-size: 1.35rem;
+            margin-bottom: 14px;
+            font-size: 1.25rem;
             font-weight: 700;
+            line-height: 1.3;
         }
 
         .service-item p {
             color: #4b5563;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
-        .gallery img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
+        .gallery div {
             border-radius: 10px;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.35rem;
+            font-weight: 700;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            padding: 20px;
+            line-height: 1.3;
         }
 
         .clients-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
         }
 
         .client-item {
             background: #0f172a;
             color: white;
-            padding: 45px 30px;
+            padding: 40px 25px;
             border-radius: 10px;
             text-align: center;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             transition: all 0.3s ease;
+            line-height: 1.3;
         }
 
         .client-item:hover {
             background: #1e293b;
-            transform: translateY(-5px);
+            transform: translateY(-4px);
         }
 
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 45px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 35px;
         }
 
         .contact-item {
             text-align: center;
-            padding: 50px 35px;
+            padding: 45px 30px;
             border: 1px solid #e2e8f0;
             border-radius: 10px;
             background: #ffffff;
@@ -288,23 +307,26 @@
 
         .contact-item h3 {
             color: #0f172a;
-            margin-bottom: 18px;
-            font-size: 1.3rem;
+            margin-bottom: 16px;
+            font-size: 1.25rem;
             font-weight: 700;
+            line-height: 1.3;
         }
 
         .contact-item p {
             color: #374151;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
+            line-height: 1.5;
         }
 
         footer {
             background: #0f172a;
             color: #e2e8f0;
             text-align: center;
-            padding: 45px 0;
-            margin-top: 70px;
+            padding: 35px 20px;
+            margin-top: 60px;
             font-size: 1rem;
+            line-height: 1.5;
         }
 
         [dir="ltr"] {
@@ -319,28 +341,148 @@
             background: #f1f5f9;
         }
 
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 30px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 25px;
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .container {
+                max-width: 95%;
             }
 
             .hero h2 {
                 font-size: 2.2rem;
             }
 
-            .hero p {
-                font-size: 1.15rem;
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 22px;
+            }
+
+            .logo {
+                justify-content: center;
+                min-width: auto;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 0.95rem;
+            }
+
+            .hero {
+                padding: 70px 20px;
             }
 
             .hero-logo img {
-                height: 100px;
+                height: 90px;
+            }
+
+            .hero h2 {
+                font-size: 1.9rem;
+                margin-bottom: 18px;
+            }
+
+            .hero p {
+                font-size: 1.08rem;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 45px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .clients-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .logo h1 {
+                font-size: 1.15rem;
+            }
+
+            .logo img {
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .logo img {
+                height: 55px;
+            }
+
+            .logo h1 {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero {
+                padding: 55px 15px;
+            }
+
+            .hero-logo img {
+                height: 80px;
+            }
+
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 45px 0;
+            }
+
+            section h2 {
+                font-size: 1.6rem;
+            }
+
+            .card, .service-item, .contact-item {
+                padding: 35px 22px;
+            }
+
+            .gallery div {
+                height: 220px;
+                font-size: 1.2rem;
+            }
+
+            .client-item {
+                padding: 30px 20px;
+                font-size: 1.05rem;
             }
         }
     </style>
@@ -472,12 +614,12 @@
         <div class="container">
             <h2 data-ar="الصور" data-en="Gallery">الصور</h2>
             <div class="gallery">
-                <div style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; border: 1px solid #e2e8f0;">رافعة شوكية ديزل</div>
-                <div style="background: linear-gradient(135deg, #0f172a, #1e293b); border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; border: 1px solid #e2e8f0;">رافعة شوكية كهربائية</div>
-                <div style="background: linear-gradient(135deg, #374151, #6b7280); border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; border: 1px solid #e2e8f0;">رافعة شوكية غازية</div>
-                <div style="background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; border: 1px solid #e2e8f0;">رافعة شوكية ثقيلة</div>
-                <div style="background: linear-gradient(135deg, #059669, #10b981); border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; border: 1px solid #e2e8f0;">رافعة شوكية صغيرة</div>
-                <div style="background: linear-gradient(135deg, #dc2626, #ef4444); border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; border: 1px solid #e2e8f0;">رافعة شوكية احترافية</div>
+                <div style="background: linear-gradient(135deg, #1e3a8a, #3b82f6);">رافعة شوكية ديزل</div>
+                <div style="background: linear-gradient(135deg, #0f172a, #1e293b);">رافعة شوكية كهربائية</div>
+                <div style="background: linear-gradient(135deg, #374151, #6b7280);">رافعة شوكية غازية</div>
+                <div style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">رافعة شوكية ثقيلة</div>
+                <div style="background: linear-gradient(135deg, #059669, #10b981);">رافعة شوكية صغيرة</div>
+                <div style="background: linear-gradient(135deg, #dc2626, #ef4444);">رافعة شوكية احترافية</div>
             </div>
         </div>
     </section>
