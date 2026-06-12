@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مؤسسة اصول التعاون الحديثة للمقاولات العامة (MCP)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.9;
+            color: #1f2937;
+            background-color: #f8fafc;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 30px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .logo img {
+            height: 85px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(201, 162, 39, 0.2);
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.08rem;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+        }
+
+        nav a:hover {
+            color: #c9a227;
+        }
+
+        .lang-switch {
+            background: #c9a227;
+            color: #0f172a;
+            border: 2px solid #c9a227;
+            padding: 12px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.98rem;
+            transition: all 0.3s ease;
+        }
+
+        .lang-switch:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: white;
+            text-align: center;
+            padding: 160px 30px;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-logo {
+            margin-bottom: 45px;
+        }
+
+        .hero-logo img {
+            height: 130px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h2 {
+            font-size: 3.3rem;
+            margin-bottom: 28px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 2;
+            color: #e2e8f0;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 70px;
+            font-size: 2.5rem;
+            color: #0f172a;
+            font-weight: 800;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #c9a227, #d4af37);
+            margin: 22px auto 0;
+            border-radius: 2px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 50px 40px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+            border-color: #c9a227;
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            color: #0f172a;
+            margin-bottom: 24px;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .card p, .card li {
+            font-size: 1.05rem;
+            color: #4b5563;
+        }
+
+        .card ul {
+            list-style-position: inside;
+            padding-right: 15px;
+        }
+
+        .card li {
+            margin-bottom: 14px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 55px 40px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+        }
+
+        .service-item:hover {
+            background: #fefefe;
+            border-color: #0f172a;
+            transform: translateY(-5px);
+        }
+
+        .service-item h3 {
+            color: #0f172a;
+            margin-bottom: 15px;
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+
+        .service-item p {
+            color: #4b5563;
+            font-size: 1.05rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .client-item {
+            background: #0f172a;
+            color: white;
+            padding: 45px 30px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .client-item:hover {
+            background: #1e293b;
+            transform: translateY(-5px);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 45px;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 50px 35px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            background: #ffffff;
+            transition: all 0.4s ease;
+        }
+
+        .contact-item:hover {
+            border-color: #c9a227;
+            background: white;
+        }
+
+        .contact-item h3 {
+            color: #0f172a;
+            margin-bottom: 18px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .contact-item p {
+            color: #374151;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #e2e8f0;
+            text-align: center;
+            padding: 45px 0;
+            margin-top: 70px;
+            font-size: 1rem;
+        }
+
+        [dir="ltr"] {
+            text-align: left;
+        }
+
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        .bg-gray {
+            background: #f1f5f9;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 25px;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.15rem;
+            }
+
+            .hero-logo img {
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="WhatsApp-Image-2026-06-09-at-11.59.33-AM.png" alt="MCP Logo">
+                    <h1 data-ar="مؤسسة اصول التعاون الحديثة للمقاولات العامة" data-en="Modern Cooperation Origins Establishment for General Contracting">مؤسسة اصول التعاون الحديثة للمقاولات العامة (MCP)</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                        <li><a href="#about" data-ar="عن المؤسسة" data-en="About">عن المؤسسة</a></li>
+                        <li><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+                        <li><a href="#gallery" data-ar="الصور" data-en="Gallery">الصور</a></li>
+                        <li><a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a></li>
+                    </ul>
+                </nav>
+                <button class="lang-switch" id="langSwitch">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <img src="WhatsApp-Image-2026-06-09-at-11.59.33-AM.png" alt="MCP Logo">
+                </div>
+                <h2 data-ar="رافعات شوكية احترافية" data-en="Professional Forklifts">رافعات شوكية احترافية</h2>
+                <p data-ar="حلول رفع ومناولة متكاملة لجميع احتياجاتك الصناعية واللوجستية" data-en="Integrated lifting and handling solutions for all your industrial and logistical needs">حلول رفع ومناولة متكاملة لجميع احتياجاتك الصناعية واللوجستية</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 data-ar="عن المؤسسة" data-en="About Us">عن المؤسسة</h2>
+            <div class="about-grid">
+                <div class="card">
+                    <h3 data-ar="رؤيتنا" data-en="Our Vision">رؤيتنا</h3>
+                    <p data-ar="أن نكون الخيار الأوّل في مجال تأجير الرافعات الشوكية بالمملكة من خلال تقديم أسطول حديث وخدمات احترافية تلبي تطلعات العملاء" data-en="To be the first choice in forklift rental in the Kingdom by providing a modern fleet and professional services that meet customer expectations">أن نكون الخيار الأوّل في مجال تأجير الرافعات الشوكية بالمملكة من خلال تقديم أسطول حديث وخدمات احترافية تلبي تطلعات العملاء</p>
+                </div>
+                <div class="card">
+                    <h3 data-ar="نبذة عن المؤسسة" data-en="About Us">نبذة عن المؤسسة</h3>
+                    <p data-ar="تأسست مؤسسة اصول التعاون الحديثة للمقاولات العامة في تأجير الرافعات الشوكية بهدف تلبية احتياجات القطاعات الصناعية واللوجستية داخل المملكة. نقدم حلول رفع ومناولة متكاملة، مع فريق عمل متخصص لضمان أعلى درجات السلامة والكفاءة." data-en="Modern Cooperation Origins Establishment for General Contracting was founded in forklift rental to meet the needs of industrial and logistical sectors within the Kingdom. We provide integrated lifting and handling solutions, with a specialized team to ensure the highest levels of safety and efficiency.">تأسست مؤسسة اصول التعاون الحديثة للمقاولات العامة في تأجير الرافعات الشوكية بهدف تلبية احتياجات القطاعات الصناعية واللوجستية داخل المملكة. نقدم حلول رفع ومناولة متكاملة، مع فريق عمل متخصص لضمان أعلى درجات السلامة والكفاءة.</p>
+                </div>
+                <div class="card">
+                    <h3 data-ar="رسالتنا" data-en="Our Mission">رسالتنا</h3>
+                    <p data-ar="توفير معدات رفع آمنة وعالية الجودة مع دعم فني متواصل لضمان استمرارية أعمال عملائنا دون توقف" data-en="To provide safe and high-quality lifting equipment with continuous technical support to ensure the continuity of our customers' operations without interruption">توفير معدات رفع آمنة وعالية الجودة مع دعم فني متواصل لضمان استمرارية أعمال عملائنا دون توقف</p>
+                </div>
+                <div class="card">
+                    <h3 data-ar="قيمنا" data-en="Our Values">قيمنا</h3>
+                    <ul data-ar="• السلامة أوﻻً&lt;br&gt;• الجودة والموثوقية&lt;br&gt;• الالتزام بالمواعيد&lt;br&gt;• الشفافية في التعامل" data-en="• Safety First&lt;br&gt;• Quality and Reliability&lt;br&gt;• Commitment to Deadlines&lt;br&gt;• Transparency in Dealings">
+                        <li>السلامة أوﻻً</li>
+                        <li>الجودة والموثوقية</li>
+                        <li>الالتزام بالمواعيد</li>
+                        <li>الشفافية في التعامل</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray">
+        <div class="container">
+            <h2 data-ar="مميزاتنا" data-en="Our Advantages">مميزاتنا</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3 data-ar="أسطول حديث" data-en="Modern Fleet">أسطول حديث</h3>
+                    <p data-ar="بقدرات مختلفة" data-en="With different capacities">بقدرات مختلفة</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-ar="أسعار تنافسية" data-en="Competitive Prices">أسعار تنافسية</h3>
+                    <p data-ar="وعقود مرنة" data-en="And flexible contracts">وعقود مرنة</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-ar="دعم فني" data-en="Technical Support">دعم فني</h3>
+                    <p data-ar="وتدخل سريع" data-en="And quick intervention">وتدخل سريع</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-ar="سلامة عالية" data-en="High Safety">سلامة عالية</h3>
+                    <p data-ar="مقاول ارامكو رقم 10038474" data-en="Aramco contractor #10038474">مقاول ارامكو رقم 10038474</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 data-ar="خدماتنا" data-en="Our Services">خدماتنا</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3 data-ar="تأجير رافعات شوكية" data-en="Forklift Rental">تأجير رافعات شوكية</h3>
+                    <p data-ar="ديزل / كهرباء" data-en="Diesel / Electric">ديزل / كهرباء</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-ar="تأجير عقود سنوية" data-en="Annual Contracts">تأجير عقود سنوية</h3>
+                </div>
+                <div class="service-item">
+                    <h3 data-ar="مشغلون مؤهلون" data-en="Qualified Operators">مشغلون مؤهلون</h3>
+                </div>
+                <div class="service-item">
+                    <h3 data-ar="عقود صيانة" data-en="Maintenance Contracts">عقود صيانة</h3>
+                    <p data-ar="عند الطلب" data-en="On demand">عند الطلب</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray">
+        <div class="container">
+            <h2 data-ar="أنواع الرافعات المتوفرة" data-en="Available Forklift Types">أنواع الرافعات المتوفرة</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3 data-ar="1.5 – 20 طن" data-en="1.5 – 20 Tons">1.5 – 20 طن</h3>
+                </div>
+                <div class="service-item">
+                    <h3 data-ar="ديزل / كهرباء / غاز" data-en="Diesel / Electric / Gas">ديزل / كهرباء / غاز</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2 data-ar="الصور" data-en="Gallery">الصور</h2>
+            <div class="gallery">
+                <div style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; border: 1px solid #e2e8f0;">رافعة شوكية ديزل</div>
+                <div style="background: linear-gradient(135deg, #0f172a, #1e293b); border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; border: 1px solid #e2e8f0;">رافعة شوكية كهربائية</div>
+                <div style="background: linear-gradient(135deg, #374151, #6b7280); border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; border: 1px solid #e2e8f0;">رافعة شوكية غازية</div>
+                <div style="background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; border: 1px solid #e2e8f0;">رافعة شوكية ثقيلة</div>
+                <div style="background: linear-gradient(135deg, #059669, #10b981); border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; border: 1px solid #e2e8f0;">رافعة شوكية صغيرة</div>
+                <div style="background: linear-gradient(135deg, #dc2626, #ef4444); border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; border: 1px solid #e2e8f0;">رافعة شوكية احترافية</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray">
+        <div class="container">
+            <h2 data-ar="عملاؤنا" data-en="Our Clients">عملاؤنا</h2>
+            <div class="clients-grid">
+                <div class="client-item" data-ar="المصانع" data-en="Factories">المصانع</div>
+                <div class="client-item" data-ar="الشركات اللوجستية" data-en="Logistics Companies">الشركات اللوجستية</div>
+                <div class="client-item" data-ar="المخازن والمستودعات" data-en="Warehouses">المخازن والمستودعات</div>
+                <div class="client-item" data-ar="المشاريع الإنشائية" data-en="Construction Projects">المشاريع الإنشائية</div>
+                <div class="client-item" data-ar="الموانئ والمطارات" data-en="Ports and Airports">الموانئ والمطارات</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3 data-ar="الهاتف" data-en="Phone">الهاتف</h3>
+                    <p dir="ltr">00966 537212999</p>
+                </div>
+                <div class="contact-item">
+                    <h3 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h3>
+                    <p dir="ltr">TAREQ@MCPGCE.COM</p>
+                </div>
+                <div class="contact-item">
+                    <h3 data-ar="الموقع" data-en="Website">الموقع</h3>
+                    <p dir="ltr">WWW.MCPGCE.COM</p>
+                </div>
+                <div class="contact-item">
+                    <h3 data-ar="العنوان" data-en="Address">العنوان</h3>
+                    <p data-ar="المملكة العربية السعودية – المنطقة الشرقية - الدمام" data-en="Kingdom of Saudi Arabia - Eastern Province - Dammam">المملكة العربية السعودية – المنطقة الشرقية - الدمام</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-ar="© 2026 مؤسسة اصول التعاون الحديثة للمقاولات العامة - جميع الحقوق محفوظة" data-en="© 2026 Modern Cooperation Origins Establishment for General Contracting - All Rights Reserved">© 2026 مؤسسة اصول التعاون الحديثة للمقاولات العامة - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'ar';
+        const langSwitch = document.getElementById('langSwitch');
+
+        function detectLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('en')) {
+                return 'en';
+            }
+            return 'ar';
+        }
+
+        function switchLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            updateContent();
+        }
+
+        function updateContent() {
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            langSwitch.textContent = currentLang === 'ar' ? 'EN' : 'عربي';
+
+            const elements = document.querySelectorAll('[data-ar]');
+            elements.forEach(el => {
+                const arText = el.getAttribute('data-ar');
+                const enText = el.getAttribute('data-en');
+                if (el.tagName === 'UL') {
+                    el.innerHTML = currentLang === 'ar' 
+                        ? '<li>السلامة أوﻻً</li><li>الجودة والموثوقية</li><li>الالتزام بالمواعيد</li><li>الشفافية في التعامل</li>'
+                        : '<li>Safety First</li><li>Quality and Reliability</li><li>Commitment to Deadlines</li><li>Transparency in Dealings</li>';
+                } else {
+                    el.textContent = currentLang === 'ar' ? arText : enText;
+                }
+            });
+
+            document.title = currentLang === 'ar' 
+                ? 'مؤسسة اصول التعاون الحديثة للمقاولات العامة (MCP)'
+                : 'Modern Cooperation Origins Establishment for General Contracting (MCP)';
+        }
+
+        langSwitch.addEventListener('click', switchLanguage);
+
+        const detectedLang = detectLanguage();
+        if (detectedLang === 'en') {
+            currentLang = 'en';
+            updateContent();
+        }
+    </script>
+</body>
+</html>
